@@ -41,7 +41,7 @@
   var stime = 1456;
   console.log(ctime + ' time of crime');
   console.log(stime + ' time of student');
-  console.log(init(ctime, stime) + ' time elapsed, [hhm]m');
+  console.log(timeDiff(ctime, stime) + ' time elapsed, [hhm]m');
   console.log(tdMinPct + ' time elapsed, minutes');
 
 }());
