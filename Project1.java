@@ -1,8 +1,9 @@
-/*Jacob Jackson
-*jijackson
-*114C
-*Project 1
-*UFPD Suspicion Calculator
+/*
+* Jacob Jackson
+* jijackson
+* 114C
+* Project 1
+* UFPD Suspicion Calculator
 */
 
 import java.util.Scanner;
@@ -22,7 +23,7 @@ public static void main(String[]args){
 	input = new Scanner(System.in);
 	System.out.println("Hello and welcome to the UF suspect suspicion calculator.");
 	while(!exit){
-	
+
 //Input Commencement
 	System.out.println("Please enter the time of the crime:");
 	if (input.hasNextInt()){
@@ -62,7 +63,7 @@ public static void main(String[]args){
 	}
 	int digits = UFID % 100;
 	System.out.println("Please enter their last timestamp:");
-	if (input.hasNextInt()){ 
+	if (input.hasNextInt()){
 	stime = input.nextInt();
 	}
 	else{
@@ -97,24 +98,24 @@ public static void main(String[]args){
 		input.next();
 		break;
 	}
-	
+
 //Distance between student and crime
 	int LatDif = clat - slat;
 	int LonDif = clon - slon;
 	double distance = java.lang.Math.sqrt(Math.pow(LatDif, 2) + Math.pow(LonDif, 2));
 	String strDouble = String.format("%.1f", distance);
 	System.out.println(strDouble);
-	
+
 //Time difference between student and crime
 	int timedif = CT - stime;
-	
+
 //Likeliness of student committing the crime:
 	String like = null;
-	
+
 //State of motion for student:
 	String movement = null;
 	String list = null;
-	
+
 //Students on safe list:
 	if (digits <= 49 ) {
 	list = "Safe List";
@@ -143,7 +144,7 @@ public static void main(String[]args){
 	movement = "moving";
 	}
 	}
-	
+
 	//Students on Unsafe List:
 	else if(digits >= 50 ) {
 	list = "Unsafe List";
@@ -180,9 +181,9 @@ public static void main(String[]args){
 	movement = "moving";
 	}
 	}
-	
-	System.out.print("Student " + UFID + " who is on the " + list + ", and was " + strDouble + 
-	 " block units away, at location (" + slon + "," + slat + ") at " 
+
+	System.out.print("Student " + UFID + " who is on the " + list + ", and was " + strDouble +
+	 " block units away, at location (" + slon + "," + slat + ") at "
 	 + stime + " and determined to be " + movement + " is " + like + " to be the criminal");
 	}
 	}
